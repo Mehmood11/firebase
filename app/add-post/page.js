@@ -1,12 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { app, db } from "@/db.config";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 
 const page = () => {
   const [value, setValue] = useState({});
-  const auth = getAuth();
   const collections = collection(db, "users");
 
   const changeInput = (e) => {
@@ -60,6 +58,14 @@ const page = () => {
         <button type="submit" onClick={addPostHandler}>
           Add Post
         </button>
+
+<div>
+  <p>Upload Image</p>
+  <input type="file"/>
+</div>
+        <div>
+          <button>Get Data</button>
+        </div>
       </form>
     </>
   );
